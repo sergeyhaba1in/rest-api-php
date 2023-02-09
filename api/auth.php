@@ -23,11 +23,21 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     $post->password = $_SERVER['PHP_AUTH_PW'];
 
     if ($post->auth()) {
-        echo 'You are authorized.';
+        $postItem = [
+            'success' => true,
+            'message' => 'Successful authorization.',
+        ];
+
+        echo json_encode($postItem);
     } else {
         header('WWW-Authenticate: Basic realm=\'Private Area\'');
         header('HTTP/1.0 401 Unauthorized');
 
-        echo 'Authorization error.';
+        $postItem = [
+            'success' => false,
+            'message' => 'Authorization error.',
+        ];
+
+        echo json_encode($postItem);
     }
 }
