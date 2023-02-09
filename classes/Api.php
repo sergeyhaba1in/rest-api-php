@@ -13,7 +13,7 @@ class Api
         $this->conn = $db;
     }
 
-    public function read()
+    public function getInfoAll()
     {
         $sql = <<<SQL
             SELECT *
@@ -26,7 +26,7 @@ class Api
         return $query;
     }
 
-    public function readSingle()
+    public function getInfoOne()
     {
         $sql = <<<SQL
             SELECT

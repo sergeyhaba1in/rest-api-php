@@ -13,7 +13,7 @@ $post = new Api($conn);
 
 $post->name = isset($_GET['name']) ? $_GET['name'] : die();
 
-$post->readSingle();
+$post->getInfoOne();
 
 $postArr= array(
     'id' => $post->id,

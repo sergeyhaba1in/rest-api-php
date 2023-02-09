@@ -11,7 +11,7 @@ $conn = $db->connect();
 
 $post = new Api($conn);
 
-$result = $post->read();
+$result = $post->getInfoAll();
 
 $num = $result->rowCount();
 
