@@ -21,7 +21,7 @@ $post->password = $data->password;
 $post->age = $data->age;
 
 if ($post->insert()) {
-    echo json_encode(array('message' => 'Record inserted to DB'));
+    echo json_encode(['message' => 'Record inserted to DB']);
 } else {
-    echo json_encode(array('message' => 'Record not inserted DB.'));
+    echo json_encode(['message' => 'Record not inserted DB.']);
 }

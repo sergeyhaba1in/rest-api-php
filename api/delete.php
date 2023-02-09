@@ -19,7 +19,8 @@ $data = json_decode(file_get_contents("php://input"));
 $post->name = $data->name;
 
 if ($post->delete()) {
-    echo json_encode(array('message' => 'Record deleted'));
+    //echo json_encode(array('message' => 'Record deleted'));
+    echo json_encode(['message' => 'Record deleted']);
 } else {
-    echo json_encode(array('message' => 'Record not deleted'));
+    echo json_encode(['message' => 'Record not deleted']);
 }

@@ -22,7 +22,7 @@ $post->password = $data->password;
 $post->age = $data->age;
 
 if ($post->update()) {
-    echo json_encode(array('message' => 'Updated.'));
+    echo json_encode(['message' => 'Updated.']);
 } else {
-    echo json_encode(array('message' => 'Not updated.'));
+    echo json_encode(['message' => 'Not updated.']);
 }

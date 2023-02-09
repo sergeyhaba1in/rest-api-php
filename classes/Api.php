@@ -13,7 +13,12 @@ class Api
         $this->conn = $db;
     }
 
-    public function getInfoAll()
+    /**
+     * Show all records from DB
+     *
+     * @return PDOStatement
+     */
+    public function getInfoAll() : PDOStatement
     {
         $sql = <<<SQL
             SELECT *
@@ -26,7 +31,12 @@ class Api
         return $query;
     }
 
-    public function getInfoOne()
+    /**
+     * Show one record from DB
+     *
+     * @return void
+     */
+    public function getInfoOne() : void
     {
         $sql = <<<SQL
             SELECT
@@ -48,7 +58,12 @@ class Api
         $this->age = $row['age'];
     }
 
-    public function insert()
+    /**
+     * Insert record to DB
+     *
+     * @return bool
+     */
+    public function insert() : bool
     {
         $sql = <<<SQL
             INSERT INTO inet
@@ -69,7 +84,12 @@ class Api
         return true;
     }
 
-    public function update()
+    /**
+     * Update record in DB by id
+     *
+     * @return bool
+     */
+    public function update() : bool
     {
         $sql = <<<SQL
             UPDATE inet
@@ -93,7 +113,12 @@ class Api
         return true;
     }
 
-    public function delete()
+    /**
+     * Delete record in DB by username
+     *
+     * @return bool
+     */
+    public function delete() : bool
     {
         $sql = <<<SQL
             DELETE FROM inet
@@ -111,6 +136,11 @@ class Api
         return true;
     }
 
+    /**
+     * Authentication by username and password
+     *
+     * @return bool
+     */
     public function auth(): bool
     {
         $sql = <<<SQL

@@ -16,25 +16,23 @@ $result = $post->getInfoAll();
 $num = $result->rowCount();
 
 if ($num > 0) {
-    $postsArr = array();
-    $postsArr['data'] = array();
+    $postsArr = [];
+    $postsArr['data'] = [];
 
     while ($row = $result->fetch()) {
         extract($row);
 
-        $postItem = array(
+        $postItem = [
             'id' => $id,
             'name' => $name,
             'password' => $password,
             'age' => $age,
-        );
+        ];
 
         array_push($postsArr['data'], $postItem);
     }
 
     echo json_encode($postsArr);
 } else {
-    echo json_encode(
-        array('message' => 'No records found.')
-    );
+    echo json_encode(['message' => 'No records found.']);
 }

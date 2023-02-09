@@ -4,7 +4,12 @@ use PDO;
 
 class DataBase
 {
-    public function connect()
+    /**
+     * Connect to DB
+     *
+     * @return PDO on success
+     */
+    public function connect() : PDO
     {
         $params = [
             'host' => 'sandbox-db',

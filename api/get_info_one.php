@@ -15,11 +15,11 @@ $post->name = isset($_GET['name']) ? $_GET['name'] : die();
 
 $post->getInfoOne();
 
-$postArr= array(
+$postArr= [
     'id' => $post->id,
     'name' => $post->name,
     'password' => $post->password,
     'age' => $post->age,
-);
+];
 
 print_r(json_encode($postArr));
